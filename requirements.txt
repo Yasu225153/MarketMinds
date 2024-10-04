@@ -5,5 +5,5 @@ python-dotenv==0.19.2
 yfinance==0.1.70
 requests==2.27.1
 alpha-vantage==2.3.1
-Python==3.12.6
+
 
