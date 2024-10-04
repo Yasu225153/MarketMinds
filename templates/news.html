@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock News</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='/css/newsCss.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header id="header_main" class="header_main">
+        <img src="{{ url_for('static', filename='images/sampleLogo.jpg') }}" alt="MarketMinds Logo" class="logo">
+        <h1>MarketMinds</h1>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Stock News</h1>
+            <form id="newsForm" method="POST" action="{{ url_for('get_news') }}">
+                <div class="input-group">
+                    <label for="symbol" style="font-size: 18px;">Enter Stock Symbol:</label><br><br>
+                    <input type="text" id="symbol" name="symbol" placeholder="for ex. BPCL, TATAMOTORS, SBIN..." required>
+                </div>
+                <button type="submit" class="btn">Get News</button>
+            </form>
+        </section>
+
+        <section id="news" class="news-section">
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Powered by MarketMinds &copy; 2024</p>
+    </footer>
+
+    <script>
+        document.getElementById('newsForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const symbol = document.getElementById('symbol').value;
+            const newsDiv = document.getElementById('news');
+            newsDiv.innerHTML = '<p>Loading news...</p>';
+    
+            const formData = new FormData();
+            formData.append('symbol', symbol);
+    
+            fetch('/get_news', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Server error: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    newsDiv.innerHTML = ''; // Clear the loading message
+                    
+                    if (data.error) {
+                        newsDiv.innerHTML = `<p>${data.error}</p>`;
+                    } else {
+                        if (data.length === 0) {
+                            newsDiv.innerHTML = '<p>No news articles found.</p>';
+                        } else {
+                            data.forEach(article => {
+                                newsDiv.innerHTML += `
+                                <div class="article">
+                                    <h2><a href="${article.url}" target="_blank">${article.title}</a></h2>
+                                    <img src="${article.urlToImage || 'default-thumbnail.jpg'}" alt="News Thumbnail" class="thumbnail">
+                                    <p>${article.description || 'No description available'}</p>
+                                    <p><em>Published on: ${new Date(article.publishedAt).toLocaleString()}</em></p>
+                                </div>
+                                <hr>
+                            `;
+                            });
+                        }
+    
+                        // Make the news section visible when data is loaded
+                        newsDiv.style.display = 'block';
+                    }
+                })
+                .catch(err => {
+                    newsDiv.innerHTML = `<p>Error: ${err.message}</p>`;
+                    newsDiv.style.display = 'block'; // Show error message
+                });
+        });
+    </script>
+    
+    
+</body>
+
+</html>

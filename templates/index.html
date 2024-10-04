@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketMinds</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleIndex.css') }}">
+</head>
+
+<body>
+    <div class="container_main">
+        <!-- Logo and Site Name -->
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/sampleLogo.jpg') }}" alt="MarketMinds Logo" class="site-logo">
+            MarketMinds
+        </div>
+        <div class="description">Your Vision for Prosperous Investments.</div>
+        
+        <form action="{{ url_for('stock_details') }}" method="POST" class="search-container">
+            <input type="text" id="stock_symbol" name="stock_symbol" class="search-box" placeholder="Search for a company" required>
+            <button type="submit" class="search-btn">Get Details</button>
+        </form>
+
+        <div class="suggestions">
+            <div class="suggestion">Reliance Industries</div>
+            <div class="suggestion">Tata Consultancy Services</div>
+            <div class="suggestion">HDFC Bank</div>
+            <div class="suggestion">Infosys</div>
+            <div class="suggestion">ICICI Bank</div>
+            <div class="suggestion">State Bank of India</div>
+            <div class="suggestion">Kotak Mahindra Bank</div>
+            <div class="suggestion">Bharti Airtel</div>
+            <div class="suggestion">Wipro</div>
+            <div class="suggestion">Adani Enterprises</div>
+            <div class="suggestion">Maruti Suzuki</div>
+            <div class="suggestion">Hindustan Unilever</div>
+            <div class="suggestion">ITC</div>
+            <div class="suggestion">Bajaj Finance</div>
+            <div class="suggestion">Asian Paints</div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.suggestion').forEach(suggestion => {
+            suggestion.addEventListener('click', function() {
+                document.getElementById('stock_symbol').value = this.textContent;
+            });
+        });
+    </script>
+</body>
+</html>

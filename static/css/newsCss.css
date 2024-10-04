@@ -1,0 +1,230 @@
+/* General body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    background: url('/static/images/news-Background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(10px); /* Slight blur for background */
+    z-index: -1;
+    background-size: cover;
+}
+
+#news {
+    display: none;
+    margin-top: 20px;
+}
+
+/* Container for better spacing */
+/* Container with glassmorphism effect */
+.container {
+    width: 95%; /* Increased width */
+    max-width: 1300px; /* Increased max-width for larger screens */
+    margin: 125px auto;
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.674); /* Transparent white */
+    border-radius: 15px; /* Smooth corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    backdrop-filter: blur(10px); /* Apply blur to background */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    border: 0px solid rgba(255, 255, 255, 0.3); /* Light border to enhance the glass effect */
+}
+
+/* Example styling for text inside the container */
+.container h1, .container p {
+    color: #fff; /* Make text white for better contrast */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow for clarity */
+}
+
+/* Header section styling */
+.header_main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 32, 74, 0.9);
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Logo styling */
+.header_main .logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header_main h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+/* Hero section for stock news form */
+.hero {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    color: #00204a;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #00204a;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 12px;
+    width: 100%; /* Adjusted to 100% for better responsiveness */
+    max-width: 500px; /* Increased max-width */
+    border: 2px solid #00204a;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    color: #00204a;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="text"]::placeholder {
+    color: #555;
+}
+
+.btn {
+    padding: 12px 25px;
+    background-color: #004080;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #00204a;
+}
+
+/* News section */
+.news-section {
+    background-color: rgba(0, 32, 74, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for each news article */
+.article {
+    display: flex;
+    flex-direction: column; /* Stack everything vertically */
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.45);
+    margin-bottom: 30px; /* Separate each article */
+    border: 1px solid #ddd;
+}
+
+.article h2 a{
+    font-size: 2.0rem;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+
+.article img.thumbnail {
+    width: 100%;
+    max-width: 600px; /* Increased max-width */
+    height: auto;
+    margin: 10px 0; /* Add some spacing around the image */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 32, 74, 0.9);
+    color: white;
+    margin-top: 50px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive styling */
+@media (max-width: 1024px) {
+    .container {
+        margin-top: 100px;
+        width: 95%; /* Adjust the width on larger tablets and smaller desktops */
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 80px;
+        width: 95%; /* Slightly adjust the width on mobile */
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    .article img.thumbnail {
+        width: 100%;
+        height: auto;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .article h2 {
+        font-size: 1.4rem;
+    }
+}
