@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="">
+
+  <title>MarketMinds</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="content">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="#">
+            <img class="main_logo" src="{{ url_for('static', filename='images/sampleLogo.jpg') }}"
+              alt="MarketMinds Logo" class="logo">
+            <span>
+              MarketMinds
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#why">Why Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#team">Team</a>
+              </li>
+              <li class="nav-item">
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#forum">Forum</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <div class="hero_area">
+      <div class="hero_bg_box">
+        <div class="bg_img_box">
+          <img src="{{ url_for('static', filename='images/hero-bg.png') }}" alt="MarketMinds">
+        </div>
+      </div>
+      <!-- slider section -->
+      <section class="slider_section ">
+        <div id="customCarousel1" class="carousel slide" data-ride="carousel" data-interval="3500">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="container ">
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <div class="detail-box">
+                      <h2 style="color: aliceblue;"> Welcome to <br></h2>
+                      <h1> MarketMinds</h1>
+                      <p>
+                        MarketMinds brings cutting-edge stock forecasting with models like ARIMA, LSTM, Linear
+                        Regression. Our platform provides investors with real-time predictions to make smarter
+                        decisions.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="img-box">
+                      <img src="{{ url_for('static', filename='images/slider-img.png') }}" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container ">
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <div class="detail-box">
+                      <h2 style="color: aliceblue;"> Welcome to <br></h2>
+                      <h1> MarketMinds</h1>
+                      <p>
+                        Using advanced machine learning algorithms, we achieve up to 90% accuracy in forecasting stock
+                        trends. Our models help minimize risk and maximize returns in the stock market.
+                      </p>
+
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="img-box">
+                      <img src="{{ url_for('static', filename='images/slider-img.png') }}" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container ">
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <div class="detail-box">
+                      <h2 style="color: aliceblue;"> Welcome to <br></h2>
+                      <h1> MarketMinds</h1>
+                      <p>
+                        Stay ahead of market movements with MarketMinds' data-driven insights. Whether you're an
+                        experienced trader or just starting, our platform empowers you to trade with confidence.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="img-box">
+                      <img src="{{ url_for('static', filename='images/slider-img.png') }}" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="carousel-indicators">
+            <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+            <li data-target="#customCarousel1" data-slide-to="1"></li>
+            <li data-target="#customCarousel1" data-slide-to="2"></li>
+          </ol>
+        </div>
+      </section>
+      <!-- end slider section -->
+    </div>
+
+    <!-- service section -->
+    <section id="services" class="service_section layout_padding">
+      <div class="service_container">
+        <div class="container ">
+          <div class="heading_container heading_center">
+            <h2>
+              Our <span>Services</span>
+            </h2>
+            <p>
+              We provide following Services to acknowledge your Trading Journey
+            </p>
+          </div>
+          <div class="row">
+            <div class="col-md-4 ">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename='images/s2.png') }}" alt="currency-converter">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Currency converter
+                  </h5>
+                  <p>
+                    Our reliable currency converter offers real-time exchange rates Designed for travelers and forex
+                    traders.
+                  </p>
+                  <a href="/currency.html">
+                    Try now
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 ">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename='images/s1.png') }}" alt="stock-forecast">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Stock Forecast
+                  </h5>
+                  <p>
+                    Our cutting-edge stock market prediction platform offers real-time insights and data-driven
+                    forecasts tailored specifically for the Indian stock market
+                  </p>
+                  <a href="/index.html">
+                    Try now
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 ">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename='images/s3.png') }}" alt="stock-forecast">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Stock News
+                  </h5>
+                  <p>
+                    fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                    The
+                    point of using
+                  </p>
+                  <a href="/news.html">
+                    Try now
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-box">
+            <a href="">
+              View All
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end service section -->
+    <!-- about section -->
+    <section id="about" class="about_section layout_padding">
+      <div class="container  ">
+        <div class="heading_container heading_center">
+          <h2>
+            About <span>Us</span>
+          </h2>
+          <p>
+            We are marketMinds a friendly partener who will guide and enhance your TRADING experience
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="img-box">
+              <img src="{{ url_for('static', filename='images/about-img.png') }}" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="detail-box">
+              <h3>
+                We Are marketMinds
+              </h3>
+              <p>
+                your trusted partner in navigating the complexities of the Indian stock market. Founded by a team of
+                passionate financial analysts and data scientists, our mission is to empower investors with cutting-edge
+                tools and insights. Using advanced machine learning algorithms, we provide real-time stock predictions
+                and in-depth market analysis to help you make confident investment decisions.
+              </p>
+              <p>
+                At marketMinds, we believe in combining technology with financial expertise to deliver accurate,
+                reliable, and easy-to-understand forecasts. Whether you're a seasoned trader or just starting, our
+                platform offers personalized predictions, dynamic charts, and the latest market trends to keep you ahead
+                of the curve.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end about section -->
+
+    <!-- why section -->
+    <section id="why" class="why_section layout_padding">
+      <div class="container">
+        <div class="heading_container heading_center">
+          <h2>
+            Why Choose <span>Us</span>
+          </h2>
+        </div>
+        <div class="why_container">
+          <div class="box">
+            <div class="img-box">
+              <img src="{{ url_for('static', filename='images/w1.png') }}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Expert Management
+              </h5>
+              <p>
+                Incidunt odit rerum tenetur alias architecto asperiores omnis cumque doloribus aperiam numquam! Eligendi
+                corrupti, molestias laborum dolores quod nisi vitae voluptate ipsa? In tempore voluptate ducimus officia
+                id, aspernatur nihil.
+                Tempore laborum nesciunt ut veniam, nemo officia ullam repudiandae repellat veritatis unde reiciendis
+                possimus animi autem natus
+              </p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="img-box">
+              <img src="{{ url_for('static', filename='images/w2.png') }}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Secure Investment
+              </h5>
+              <p>
+                Incidunt odit rerum tenetur alias architecto asperiores omnis cumque doloribus aperiam numquam! Eligendi
+                corrupti, molestias laborum dolores quod nisi vitae voluptate ipsa? In tempore voluptate ducimus officia
+                id, aspernatur nihil.
+                Tempore laborum nesciunt ut veniam, nemo officia ullam repudiandae repellat veritatis unde reiciendis
+                possimus animi autem natus
+              </p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="img-box">
+              <img src="{{ url_for('static', filename='images/w3.png') }}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Instant Trading
+              </h5>
+              <p>
+                Incidunt odit rerum tenetur alias architecto asperiores omnis cumque doloribus aperiam numquam! Eligendi
+                corrupti, molestias laborum dolores quod nisi vitae voluptate ipsa? In tempore voluptate ducimus officia
+                id, aspernatur nihil.
+                Tempore laborum nesciunt ut veniam, nemo officia ullam repudiandae repellat veritatis unde reiciendis
+                possimus animi autem natus
+              </p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="img-box">
+              <img src="{{ url_for('static', filename='images/w4.png') }}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Happy Customers
+              </h5>
+              <p>
+                Incidunt odit rerum tenetur alias architecto asperiores omnis cumque doloribus aperiam numquam! Eligendi
+                corrupti, molestias laborum dolores quod nisi vitae voluptate ipsa? In tempore voluptate ducimus officia
+                id, aspernatur nihil.
+                Tempore laborum nesciunt ut veniam, nemo officia ullam repudiandae repellat veritatis unde reiciendis
+                possimus animi autem natus
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="btn-box">
+          <a href="">
+            Read More
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- end why section -->
+
+    <!-- team section -->
+    <section id="team" class="team_section layout_padding">
+      <div class="container-fluid">
+        <div class="heading_container heading_center">
+          <h2 class="">
+            Our <span> Team</span>
+          </h2>
+        </div>
+        <div class="team_container">
+          <div class="row">
+            <div class="col-lg-3 col-sm-6">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename='images/team-1.jpg') }}" class="img1" alt="No Image Added">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Piyush Gosavi
+                  </h5>
+                  <p>
+                    Project Manager & Backend Developer
+                  </p>
+                </div>
+                <div class="social_box">
+                  <a href="#">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename='images/team-2.jpg') }}" class="img1" alt="No Image Added">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Yashodhan Suryawanshi
+                  </h5>
+                  <p>
+                    Backend Developer
+                  </p>
+                </div>
+                <div class="social_box">
+                  <a href="#">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename='images/team-3.jpg') }}" class="img1" alt="No Image Added">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Mayur Kharat
+                  </h5>
+                  <p>
+                    Frontend Developer
+                  </p>
+                </div>
+                <div class="social_box">
+                  <a href="#">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename='images/team-4.jpg') }}" class="img1" alt="No Image Added">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Saurabh Pagar
+                  </h5>
+                  <p>
+                    Frontend Developer
+                  </p>
+                </div>
+                <div class="social_box">
+                  <a href="#">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename='images/team-5.jpg') }}" class="img1" alt="No Image Added">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Aditya Ahire
+                  </h5>
+                  <p>
+                    Web Tester
+                  </p>
+                </div>
+                <div class="social_box">
+                  <a href="#">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <!-- end team section -->
+
+  <!-- client section -->
+  <section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center psudo_white_primary mb_45">
+        <h2>
+          What says our <span>Customers</span>
+        </h2>
+      </div>
+      <div class="carousel-wrap ">
+        <div class="owl-carousel client_owl-carousel">
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/client1.jpg') }}" alt="" class="box-img">
+              </div>
+              <div class="detail-box">
+                <div class="client_id">
+                  <div class="client_info">
+                    <h6>
+                      LusDen
+                    </h6>
+                    <p>
+                      magna aliqua. Ut
+                    </p>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                  et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/client2.jpg') }}" alt="" class="box-img">
+              </div>
+              <div class="detail-box">
+                <div class="client_id">
+                  <div class="client_info">
+                    <h6>
+                      Zen Court
+                    </h6>
+                    <p>
+                      magna aliqua. Ut
+                    </p>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                  et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/client1.jpg') }}" alt="" class="box-img">
+              </div>
+              <div class="detail-box">
+                <div class="client_id">
+                  <div class="client_info">
+                    <h6>
+                      LusDen
+                    </h6>
+                    <p>
+                      magna aliqua. Ut
+                    </p>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                  et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{{ url_for('static', filename='images/client2.jpg') }}" alt="" class="box-img">
+              </div>
+              <div class="detail-box">
+                <div class="client_id">
+                  <div class="client_info">
+                    <h6>
+                      Zen Court
+                    </h6>
+                    <p>
+                      magna aliqua. Ut
+                    </p>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                  et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end client section -->
+
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_contact">
+            <h4>
+              Address
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Location
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +01 1234567890
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  demo@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="info_social">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_detail">
+            <h4>
+              Info
+            </h4>
+            <p>
+              necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin
+              words, combined with a handful
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mx-auto info_col">
+          <div class="info_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="info_links">
+              <a class="active" href="#">
+                Home
+              </a>
+              <a class="" href="#about">
+                About
+              </a>
+              <a class="" href="#services">
+                Services
+              </a>
+              <a class="" href="#why">
+                Why Us
+              </a>
+              <a class="" href="#team">
+                Team
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col" id="forum">
+          <h4>
+            Forum
+          </h4>
+          <form action="#">
+            <input type="text" placeholder="Enter email" />
+            <button type="submit">
+              Share Thoughts
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <section class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="#">MarketMinds</a>
+      </p>
+    </div>
+  </section>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+  <!-- owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/custom.js') }}"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+  </div>
+  <!-- Login Panel -->
+  <div id="login-panel" class="hidden">
+    <h2>Login</h2>
+    <form>
+      <label for="username" style="color: black;">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <br>
+      <label for="password" style="color: black; margin-top: 10px;">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <button class="sub" type="submit">Submit</button>
+    </form>
+    <button class="closing" id="login-close-button">Close</button>
+    <div class="register">
+      <p>Don't have an account? <a href="#register-panel" id="show-register">Register</a></p>
+    </div>
+  </div>
+
+  <!-- Registration Panel -->
+  <div id="register-panel" class="hidden">
+    <h2>Register</h2>
+    <form>
+      <label for="reg-username" style="color: black;">Username:</label>
+      <input type="text" id="reg-username" name="reg-username" required>
+      <br>
+      <label for="reg-email" style="color: black; margin-top: 10px;">Email:</label>
+      <input type="email" id="reg-email" name="reg-email" required>
+      <br>
+      <label for="reg-password" style="color: black; margin-top: 10px;">Password:</label>
+      <input type="password" id="reg-password" name="reg-password" required>
+      <br>
+      <button class="sub" type="submit">Register</button>
+    </form>
+    <button class="closing" id="register-close-button">Close</button>
+    <div class="login">
+      <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+    </div>
+  </div>
+  </div>
+
+  <script>
+    // Get elements
+    const loginButton = document.getElementById('login-button'); // Trigger for showing login
+    const loginCloseButton = document.getElementById('login-close-button'); // Close button for login
+    const registerCloseButton = document.getElementById('register-close-button'); // Close button for registration
+    const content = document.getElementById('content'); // Main content to blur
+    const loginPanel = document.getElementById('login-panel'); // Login panel div
+    const registerPanel = document.getElementById('register-panel'); // Registration panel div
+    const showRegisterLink = document.getElementById('show-register'); // Link to show registration
+    const showLoginLink = document.getElementById('show-login'); // Link to show login
+    const body = document.querySelector('body'); // Body element to disable scrolling
+
+    // Show login panel and blur background content
+    loginButton.addEventListener('click', function () {
+      content.classList.add('blurred-content');
+      loginPanel.classList.add('show');
+      loginPanel.classList.remove('hidden');
+      body.classList.add('no-scroll');
+    });
+
+    // Hide login panel and remove blur effect
+    loginCloseButton.addEventListener('click', function () {
+      content.classList.remove('blurred-content');
+      loginPanel.classList.remove('show');
+      loginPanel.classList.add('hidden');
+      body.classList.remove('no-scroll');
+    });
+
+    // Show registration panel, hide login panel, and blur background content
+    showRegisterLink.addEventListener('click', function () {
+      loginPanel.classList.remove('show');
+      loginPanel.classList.add('hidden');
+      registerPanel.classList.add('show');
+      registerPanel.classList.remove('hidden');
+    });
+
+    // Show login panel, hide registration panel
+    showLoginLink.addEventListener('click', function () {
+      registerPanel.classList.remove('show');
+      registerPanel.classList.add('hidden');
+      loginPanel.classList.add('show');
+      loginPanel.classList.remove('hidden');
+    });
+
+    // Hide registration panel and remove blur effect
+    registerCloseButton.addEventListener('click', function () {
+      content.classList.remove('blurred-content');
+      registerPanel.classList.remove('show');
+      registerPanel.classList.add('hidden');
+      body.classList.remove('no-scroll');
+    });
+  </script>
+</body>
+
+</html>

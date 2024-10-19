@@ -1,0 +1,197 @@
+/* Base styles for all screen sizes */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url(/static/images/hero-bg.png);
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.container_main {
+    padding: 20px;
+    margin: 50px 20px;
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+    max-width: 700px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds depth */
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
+    background: linear-gradient(135deg, #ffffff 0%, #d6e9f9 100%); /* Subtle blue gradient */
+}
+
+.logo {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.7em;
+    color: #1c232d;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.site-logo {
+    width: 65px; /* Circle shape logo */
+    height: 65px;
+    margin-right: 10px; /* Space between logo and text */
+    border-radius: 50%;
+    object-fit: cover; /* Ensures the image fits the circular shape */
+}
+
+.description {
+    font-size: 1.2em;
+    color: #1c232d; /* Darker color for readability */
+    margin-bottom: 30px;
+}
+
+.search-box {
+    width: calc(100% - 30px);
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+    font-size: 1em;
+    background-color: #f8f8f8; /* Light background for contrast */
+    color: #333; /* Darker text for input */
+    box-sizing: border-box;
+}
+
+.search-container {
+    margin-top: 30px;
+}
+
+.search-btn {
+    background-color: #00b853; /* Green button */
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.search-btn:hover {
+    background-color: #009a44;
+}
+
+.suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.suggestion {
+    background-color: #f1f1f1;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    color: #3A3A3A;
+    border: 1px solid #d9d9d9;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.suggestion:hover {
+    background-color: #c2c1c1;
+}
+
+/* Media queries for responsiveness */
+
+/* Smartphones (portrait and landscape) */
+@media (max-width: 600px) {
+    .logo {
+        font-size: 2em;
+    }
+
+    .site-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .description {
+        font-size: 1em;
+    }
+
+    .search-box {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .search-btn {
+        padding: 12px 18px;
+        font-size: 0.9em;
+    }
+
+    .suggestion {
+        font-size: 0.85em;
+        padding: 8px 10px;
+    }
+}
+
+/* Tablets (portrait and landscape) */
+@media (min-width: 601px) and (max-width: 900px) {
+    .logo {
+        font-size: 2.3em;
+    }
+
+    .site-logo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .description {
+        font-size: 1.1em;
+    }
+
+    .search-box {
+        padding: 14px;
+    }
+
+    .search-btn {
+        padding: 14px 18px;
+        font-size: 1em;
+    }
+
+    .suggestion {
+        font-size: 0.9em;
+        padding: 10px 12px;
+    }
+}
+
+/* Laptops and Desktop screens */
+@media (min-width: 901px) {
+    .logo {
+        font-size: 2.7em;
+    }
+
+    .site-logo {
+        width: 65px;
+        height: 65px;
+    }
+
+    .description {
+        font-size: 1.2em;
+    }
+
+    .search-box {
+        padding: 15px;
+    }
+
+    .search-btn {
+        padding: 15px 20px;
+        font-size: 1em;
+    }
+
+    .suggestion {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+}

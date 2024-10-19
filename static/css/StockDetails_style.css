@@ -1,0 +1,372 @@
+/* General styles */
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Fix horizontal scrolling */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Container styling */
+.container {
+    width: 100%;
+    padding: 0px;
+    box-sizing: border-box;
+    max-width: 1920px;
+    margin: 0px;
+}
+
+/* Header styling */
+.pageheader {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.pageheader h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Adjust header text size for smaller screens */
+@media screen and (max-width: 768px) {
+    .pageheader h1 {
+        font-size: 1.5rem;
+    }
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Center section headings */
+section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Search bar styling */
+.search-bar {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+}
+
+.search-box {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+    font-size: 1rem;
+}
+
+.search-box:focus {
+    border-color: #1e3c72;
+}
+
+.search-btn {
+    background: #1e3c72;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-btn:hover {
+    background-color: #2a5298;
+}
+
+/* Responsive search bar */
+@media screen and (max-width: 768px) {
+    .search-box {
+        max-width: 250px;
+        padding: 10px;
+    }
+    .search-btn {
+        padding: 10px 15px;
+    }
+}
+
+/* Stock details header */
+.header {
+    text-align: center;
+    background-color: #1e3c72;
+    color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Price info section */
+.price-info {
+    margin-top: 10px;
+}
+
+.price-info .price {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.exchange-info {
+    display: block;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    white-space: nowrap;
+    overflow-x: auto;
+    padding: 0 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    color: #333;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+    margin: 0 10px;
+    flex-shrink: 0;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+}
+
+/* Stock data cards */
+.stock-data-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.stock-card {
+    width: 150px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin: 10px;
+}
+
+.stock-card:hover {
+    transform: scale(1.05);
+}
+
+/* Specific colors for stock data cards */
+.stock-card.blue {
+    background-color: #1e3c72;
+}
+
+.stock-card.yellow {
+    background-color: #ffc107;
+}
+
+.stock-card.green {
+    background-color: #28a745;
+}
+
+.stock-card.red {
+    background-color: #dc3545;
+}
+
+/* Adjust stock card size on smaller screens */
+@media screen and (max-width: 768px) {
+    .stock-card {
+        width: 120px;
+        padding: 15px;
+    }
+}
+
+/* Chart Section */
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 3px;
+    padding: 20px;
+}
+
+.chart {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Responsive chart size */
+@media screen and (max-width: 768px) {
+    .chart {
+        height: auto;
+    }
+}
+
+/* Forecast Price Section */
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-left: 20px auto;
+}
+
+@media screen and (max-width: 768px) {
+    .forecast-grid {
+        grid-template-columns: 1fr;
+    }
+    .forecast-grid .prediction-item img{
+        width: 100%;
+
+    }
+}
+.overview {
+    background-color: #f4f6f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 20px auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.overview h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.label {
+    font-weight: 600;
+    color: #007bff;
+}
+
+.value {
+    font-weight: 400;
+    color: #333;
+}
+
+@media screen and (max-width: 600px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Prediction Details */
+.prediction-details {
+    margin-top: 30px;
+}
+
+.prediction-details h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+    margin-top: 40px;
+}
+
+.prediction-card {
+    width: 200px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin: 10px auto;
+}
+
+.prediction-card p {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.prediction-card.green {
+    background-color: #28a745;
+}
+
+.prediction-card.blue {
+    background-color: #1e3c72;
+}
+
+.prediction-card.yellow {
+    background-color: #ffc107;
+}
+
+.prediction-card.red {
+    background-color: #dc3545;
+}
+
+.prediction-card:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketMinds</title>
+    <style>
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url("E:\PROJECT\currency-exchange\images\s3.png");
+    background: linear-gradient(135deg, #f4f7f6, #a2c2e9);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Container for the converter with enhanced glassmorphism effect */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px); /* Reduced blur to prevent text blurriness */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    text-align: center;
+    width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(100%); /* Slightly reduced scale to reduce blurriness */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.63);
+}
+
+/* Title styling */
+h1 {
+    font-size: 28px;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Input section styling */
+.input-section,
+.dropdown-section {
+    margin-bottom: 25px;
+}
+
+label {
+    font-size: 18px;
+    color: #333;
+    margin-right: 10px;
+}
+
+input, select {
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Button styling */
+button {
+    padding: 15px 25px;
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Result box styling */
+.result-box {
+    margin-top: 25px;
+    font-size: 20px;
+    color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    display: none;
+}
+
+.result-box.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Currency Converter</h1>
+        <div class="converter-box">
+            <div class="input-section">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" placeholder="Enter amount" value="1">
+            </div>
+            <div class="dropdown-section">
+                <label for="fromCurrency">From:</label>
+                <select id="fromCurrency">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="INR">INR</option>
+                    <option value="JPY">JPY</option>
+                    <!-- Add more currencies as needed -->
+                </select>
+
+                <label for="toCurrency">To:</label>
+                <select id="toCurrency">
+                    <option value="INR">INR</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="JPY">JPY</option>
+                    <!-- Add more currencies as needed -->
+                </select>
+            </div>
+            <button onclick="convertCurrency()">Convert</button>
+            <div id="result" class="result-box"></div>
+        </div>
+    </div>
+
+    <script>
+        const apiKey ="56f5c1144a65edc29edf1c59"; // Replace with your actual API key
+const apiUrl = 'https://v6.exchangerate-api.com/v6/' + apiKey + '/latest/';
+
+// Function to fetch exchange rates
+async function fetchExchangeRates(baseCurrency) {
+    try {
+        const response = await fetch(apiUrl + baseCurrency);
+        const data = await response.json();
+        return data.conversion_rates;
+    } catch (error) {
+        console.error('Error fetching exchange rates:', error);
+        return null;
+    }
+}
+
+// Function to convert currency
+async function convertCurrency() {
+    const amount = parseFloat(document.getElementById('amount').value);
+    const fromCurrency = document.getElementById('fromCurrency').value;
+    const toCurrency = document.getElementById('toCurrency').value;
+    const resultBox = document.getElementById('result');
+
+    if (isNaN(amount) || amount <= 0) {
+        resultBox.innerHTML = "Please enter a valid amount.";
+        resultBox.classList.add('active');
+        return;
+    }
+
+    if (fromCurrency === toCurrency) {
+        resultBox.innerHTML = `Same currency selected. Amount: ${amount} ${toCurrency}`;
+        resultBox.classList.add('active');
+        return;
+    }
+
+    const rates = await fetchExchangeRates(fromCurrency);
+
+    if (!rates || !(toCurrency in rates)) {
+        resultBox.innerHTML = "Unable to fetch conversion rates.";
+        resultBox.classList.add('active');
+        return;
+    }
+
+    const convertedAmount = (amount * rates[toCurrency]).toFixed(2);
+    resultBox.innerHTML = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+    resultBox.classList.add('active');
+}
+
+// Add event listener to convert button
+document.querySelector('button').addEventListener('click', convertCurrency);
+
+    </script>
+</body>
+
+</html>
