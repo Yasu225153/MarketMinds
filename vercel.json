@@ -1,24 +1,15 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "app.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/static/(.*)",
-        "dest": "/static/$1"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "app.py"
-      }
-    ],
-    "env": {
-      "FLASK_ENV": "production",
-      "DATABASE_URL": "@your-database-url"  // Add your own environment variables
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",    // Your main Python file
+      "use": "@vercel/python"
     }
-  }
-  
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",     // Routes all requests to your app
+      "dest": "app.py"
+    }
+  ]
+}
